@@ -1,0 +1,889 @@
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.jdk.version    => 1.8.0_151
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.dir       => F:\Java\javaworks\attendance
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.java.io.tmpdir => C:\Users\g\AppData\Local\Temp\
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.timezone  => Asia/Shanghai
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.file.encoding  => UTF-8
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.classpath      => F:/Java/javaworks/attendance/target/classes/
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /auth/login
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /index
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /syllabus
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /manager
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route POST   /req/isRightUser
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /user/user
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Register bean: [com.blade.Environment@13f7b5ca, com.bladejava.Controller.RequestController@101c765f, com.bladejava.config.Dbconfig@3ee6053b, com.bladejava.Controller.LoginController@50c9a646, com.bladejava.service.LoginService@7e3e1070, com.bladejava.Controller.ManagerController@d632f66, com.bladejava.Dao.LoginDao@3a23c2c, com.bladejava.config.Dbconfig@3ee6053b, com.bladejava.Controller.SyllabusController@1e445188, com.bladejava.Controller.UserController@10f77fa0]
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]                  c.b.c.Dbconfig : database init success
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Watched environment: true
+2018/05/13 20:59:43  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Use NioEventLoopGroup
+2018/05/13 20:59:44  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade initialize successfully, Time elapsed: 1463 ms
+2018/05/13 20:59:44  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade start with 0.0.0.0:9000
+2018/05/13 20:59:44  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Open browser access http://127.0.0.1:9000 ⚡
+
+2018/05/13 20:59:48  INFO [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 200   21ms  GET    /
+2018/05/13 20:59:48  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200   24ms  GET    /static/css/style.css
+2018/05/13 20:59:48  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /static/img/slide1.jpg
+2018/05/13 20:59:48  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /static/img/slide2.jpg
+2018/05/13 20:59:54 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : Executing query:
+SELECT COUNT(*) FROM students LIMIT 1
+2018/05/13 20:59:54 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : total: 34 ms, execution: 19 ms, reading and parsing: 15 ms; executed [null]
+2018/05/13 20:59:54 ERROR [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 500         POST   /req/isRightUser
+2018/05/13 20:59:54 ERROR [   worker@threadㄧ2 ] c.b.m.h.DefaultExceptionHandler : Handle exception =>  org.sql2o.Sql2oException: Failed to add parameter with name 'p1'. No parameter with that name is declared in the sql.
+	at org.sql2o.Query.addParameterInternal(Query.java:138)
+	at org.sql2o.Query.addParameter(Query.java:259)
+	at org.sql2o.Query.addParameter(Query.java:165)
+	at org.sql2o.Query.addParameter(Query.java:203)
+	at org.sql2o.Query.withParams(Query.java:194)
+	at io.github.biezhi.anima.core.AnimaQuery.queryList(AnimaQuery.java:1048)
+	at io.github.biezhi.anima.core.AnimaQuery.queryList(AnimaQuery.java:1067)
+	at io.github.biezhi.anima.core.AnimaQuery.queryOne(AnimaQuery.java:1032)
+	at io.github.biezhi.anima.core.AnimaQuery.one(AnimaQuery.java:782)
+	at com.bladejava.service.LoginService.validate(LoginService.java:21)
+	at com.bladejava.Controller.RequestController.isRightUser(RequestController.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.blade.kit.ReflectKit.invokeMethod(ReflectKit.java:112)
+	at com.blade.mvc.handler.RequestExecution.handle(RequestExecution.java:185)
+	at com.blade.mvc.handler.RequestExecution.routeHandle(RequestExecution.java:156)
+	at com.blade.mvc.handler.RequestExecution.run(RequestExecution.java:115)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:26)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:18)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.handler.codec.http.HttpServerExpectContinueHandler.channelRead(HttpServerExpectContinueHandler.java:95)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:284)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1414)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:945)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:146)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.jdk.version    => 1.8.0_151
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.dir       => F:\Java\javaworks\attendance
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.java.io.tmpdir => C:\Users\g\AppData\Local\Temp\
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.timezone  => Asia/Shanghai
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.file.encoding  => UTF-8
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.classpath      => F:/Java/javaworks/attendance/target/classes/
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /auth/login
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /index
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /syllabus
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /manager
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route POST   /req/isRightUser
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /user/user
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Register bean: [com.blade.Environment@4caca8a8, com.bladejava.config.Dbconfig@7bc5261d, com.bladejava.Controller.LoginController@485687a6, com.bladejava.Controller.RequestController@693bfaa4, com.bladejava.service.LoginService@40fbf6c3, com.bladejava.Controller.ManagerController@125cc50f, com.bladejava.Dao.LoginDao@6e4b1b55, com.bladejava.config.Dbconfig@7bc5261d, com.bladejava.Controller.SyllabusController@581322e2, com.bladejava.Controller.UserController@47c19acd]
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]                  c.b.c.Dbconfig : database init success
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Watched environment: true
+2018/05/13 21:07:25  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Use NioEventLoopGroup
+2018/05/13 21:07:26  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade initialize successfully, Time elapsed: 1678 ms
+2018/05/13 21:07:26  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade start with 0.0.0.0:9000
+2018/05/13 21:07:26  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Open browser access http://127.0.0.1:9000 ⚡
+
+2018/05/13 21:07:29  INFO [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 200   26ms  GET    /
+2018/05/13 21:07:29  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200   21ms  GET    /static/css/style.css
+2018/05/13 21:07:29  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /static/img/slide1.jpg
+2018/05/13 21:07:29  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    5ms  GET    /static/img/slide2.jpg
+2018/05/13 21:07:35 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : Executing query:
+SELECT COUNT(*) FROM students LIMIT 1
+2018/05/13 21:07:36 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : total: 34 ms, execution: 19 ms, reading and parsing: 15 ms; executed [null]
+2018/05/13 21:07:36 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : Executing query:
+select stuname from students limit 1
+2018/05/13 21:07:36 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+2018/05/13 21:07:36  INFO [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 200  535ms  POST   /req/isRightUser
+2018/05/13 21:07:36  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/css/style.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/css/loader-style.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/css/bootstrap.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ4 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/js/progress-bar/number-pb.css
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/jquery.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/bootstrap.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ4 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/src/jquery.velocity.min.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/main.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/app.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/jquery.flot.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ4 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/load.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/jquery.flot.resize.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ4 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/realTime.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ4 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/jhere-custom.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/speed/canvasgauge-coustom.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/countdown/jquery.countdown.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ5 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/preloader.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ6 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/progress-app.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ7 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/number-pb.js
+2018/05/13 21:07:36  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/css/style.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/img/bg.jpg
+2018/05/13 21:07:36  INFO [   worker@threadㄧ4 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/img/search-white.png
+2018/05/13 21:07:36  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/js/skin-select/skin-select.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/css/font-awesome.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ4 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/css/entypo-icon.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ6 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/css/maki-icons.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/css/weather-icons.min.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ7 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/css/dripicon.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ5 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/js/pnotify/jquery.pnotify.default.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/js/pace/themes/pace-theme-center-simple.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ7 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/js/slidebars/slidebars.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ6 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/css/awwwards.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/js/tip/tooltipster.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ4 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/css/open-sans.css
+2018/05/13 21:07:36  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/js/gage/jquery.easy-pie-chart.css
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/src/jquery.velocity.min.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/number-pb.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/progress-app.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/preloader.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/bootstrap.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/app.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/load.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/main.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/jquery.flot.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/jquery.flot.resize.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/realTime.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/speed/canvasgauge-coustom.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/countdown/jquery.countdown.js
+2018/05/13 21:07:36  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/jhere-custom.js
+2018/05/13 21:07:37  WARN [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 404         GET    /assets/fonts/open-sans-normal.woff
+2018/05/13 21:07:37  WARN [   worker@threadㄧ5 ]       c.b.s.n.StaticFileHandler : 404         GET    /assets/fonts/open-sans-bold.woff
+2018/05/13 21:07:37  INFO [   worker@threadㄧ7 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/font/entypo.woff
+2018/05/13 21:07:37  INFO [   worker@threadㄧ4 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/font/dripicons.ttf
+2018/05/13 21:07:37  INFO [   worker@threadㄧ6 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/font/weathericons-regular-webfont.woff
+2018/05/13 21:07:37  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    5ms  GET    /assets/fonts/fontawesome-webfont.woff
+2018/05/13 21:07:37  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/font/maki.woff
+2018/05/13 21:07:37  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/fonts/open-sans-light.woff
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.jdk.version    => 1.8.0_151
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.dir       => F:\Java\javaworks\attendance
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.java.io.tmpdir => C:\Users\g\AppData\Local\Temp\
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.timezone  => Asia/Shanghai
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.file.encoding  => UTF-8
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.classpath      => F:/Java/javaworks/attendance/target/classes/
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /auth/login
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /index
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /syllabus
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /manager
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route POST   /req/isRightUser
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /user/user
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Register bean: [com.blade.Environment@13f7b5ca, com.bladejava.Controller.RequestController@101c765f, com.bladejava.config.Dbconfig@3ee6053b, com.bladejava.Controller.LoginController@50c9a646, com.bladejava.service.LoginService@7e3e1070, com.bladejava.Controller.ManagerController@d632f66, com.bladejava.Dao.LoginDao@3a23c2c, com.bladejava.config.Dbconfig@3ee6053b, com.bladejava.Controller.SyllabusController@1e445188, com.bladejava.Controller.UserController@10f77fa0]
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]                  c.b.c.Dbconfig : database init success
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Watched environment: true
+2018/05/13 21:08:10  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Use NioEventLoopGroup
+2018/05/13 21:08:12  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade initialize successfully, Time elapsed: 1404 ms
+2018/05/13 21:08:12  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade start with 0.0.0.0:9000
+2018/05/13 21:08:12  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Open browser access http://127.0.0.1:9000 ⚡
+
+2018/05/13 21:08:27  INFO [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 200   22ms  GET    /
+2018/05/13 21:08:28  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200   35ms  GET    /static/css/style.css
+2018/05/13 21:08:38 DEBUG [   worker@threadㄧ3 ]                       o.s.Query : Executing query:
+SELECT COUNT(*) FROM students LIMIT 1
+2018/05/13 21:08:38 DEBUG [   worker@threadㄧ3 ]                       o.s.Query : total: 33 ms, execution: 20 ms, reading and parsing: 13 ms; executed [null]
+2018/05/13 21:08:38 ERROR [   worker@threadㄧ3 ]        c.b.m.h.RequestExecution : 500         POST   /req/isRightUser
+2018/05/13 21:08:38 ERROR [   worker@threadㄧ3 ] c.b.m.h.DefaultExceptionHandler : Handle exception =>  org.sql2o.Sql2oException: Failed to add parameter with name 'p1'. No parameter with that name is declared in the sql.
+	at org.sql2o.Query.addParameterInternal(Query.java:138)
+	at org.sql2o.Query.addParameter(Query.java:259)
+	at org.sql2o.Query.addParameter(Query.java:165)
+	at org.sql2o.Query.addParameter(Query.java:203)
+	at org.sql2o.Query.withParams(Query.java:194)
+	at io.github.biezhi.anima.core.AnimaQuery.queryOne(AnimaQuery.java:1010)
+	at io.github.biezhi.anima.core.ResultList.one(ResultList.java:46)
+	at com.bladejava.service.LoginService.validate(LoginService.java:23)
+	at com.bladejava.Controller.RequestController.isRightUser(RequestController.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.blade.kit.ReflectKit.invokeMethod(ReflectKit.java:112)
+	at com.blade.mvc.handler.RequestExecution.handle(RequestExecution.java:185)
+	at com.blade.mvc.handler.RequestExecution.routeHandle(RequestExecution.java:156)
+	at com.blade.mvc.handler.RequestExecution.run(RequestExecution.java:115)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:26)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:18)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.handler.codec.http.HttpServerExpectContinueHandler.channelRead(HttpServerExpectContinueHandler.java:95)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:284)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1414)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:945)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:146)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.jdk.version    => 1.8.0_151
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.dir       => F:\Java\javaworks\attendance
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.java.io.tmpdir => C:\Users\g\AppData\Local\Temp\
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.timezone  => Asia/Shanghai
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.file.encoding  => UTF-8
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.classpath      => F:/Java/javaworks/attendance/target/classes/
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /auth/login
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /index
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /syllabus
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /manager
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route POST   /req/isRightUser
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /user/user
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Register bean: [com.blade.Environment@44adfaeb, com.bladejava.config.Dbconfig@5b067f5a, com.bladejava.Controller.RequestController@73616a4b, com.bladejava.Controller.LoginController@5fe39676, com.bladejava.service.LoginService@743245c3, com.bladejava.Controller.ManagerController@1c2608b0, com.bladejava.Dao.LoginDao@64ed0a4d, com.bladejava.config.Dbconfig@5b067f5a, com.bladejava.Controller.SyllabusController@27fe6080, com.bladejava.Controller.UserController@418435e1]
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]                  c.b.c.Dbconfig : database init success
+2018/05/13 21:09:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Watched environment: true
+2018/05/13 21:09:57  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Use NioEventLoopGroup
+2018/05/13 21:09:58  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade initialize successfully, Time elapsed: 1402 ms
+2018/05/13 21:09:58  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade start with 0.0.0.0:9000
+2018/05/13 21:09:58  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Open browser access http://127.0.0.1:9000 ⚡
+
+2018/05/13 21:10:00  INFO [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 200   28ms  GET    /
+2018/05/13 21:10:00  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200   19ms  GET    /static/css/style.css
+2018/05/13 21:10:00  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /static/img/slide1.jpg
+2018/05/13 21:10:00  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    6ms  GET    /static/img/slide2.jpg
+2018/05/13 21:10:09 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : Executing query:
+SELECT COUNT(*) FROM students LIMIT 1
+2018/05/13 21:10:09 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : total: 33 ms, execution: 19 ms, reading and parsing: 14 ms; executed [null]
+2018/05/13 21:10:09 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : Executing query:
+select stuname from students where stuid=20150001
+2018/05/13 21:10:09 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : total: 4 ms, execution: 3 ms, reading and parsing: 1 ms; executed [null]
+2018/05/13 21:10:09  INFO [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 200  520ms  POST   /req/isRightUser
+2018/05/13 21:10:09  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/css/style.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/css/loader-style.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    5ms  GET    /assets/css/bootstrap.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200   19ms  GET    /assets/js/progress-bar/number-pb.css
+2018/05/13 21:10:09  WARN [   worker@threadㄧ7 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/jquery.flot.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ4 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/jquery.flot.resize.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ6 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/main.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/realTime.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ5 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/load.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/speed/canvasgauge-coustom.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ4 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/number-pb.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ7 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/jhere-custom.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/jquery.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ4 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/preloader.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ6 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/countdown/jquery.countdown.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ5 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/src/jquery.velocity.min.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/progress-app.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ7 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/app.js
+2018/05/13 21:10:09  WARN [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/bootstrap.js
+2018/05/13 21:10:09  INFO [   worker@threadㄧ6 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/js/skin-select/skin-select.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/css/entypo-icon.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ7 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/css/maki-icons.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ6 ]       c.b.s.n.StaticFileHandler : 200    1ms  GET    /assets/css/open-sans.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/css/dripicon.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ4 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/css/weather-icons.min.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/js/pnotify/jquery.pnotify.default.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/css/awwwards.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ6 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/js/pace/themes/pace-theme-center-simple.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ7 ]       c.b.s.n.StaticFileHandler : 200    5ms  GET    /assets/js/tip/tooltipster.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/js/gage/jquery.easy-pie-chart.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ4 ]       c.b.s.n.StaticFileHandler : 200    5ms  GET    /assets/js/slidebars/slidebars.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ5 ]       c.b.s.n.StaticFileHandler : 200    9ms  GET    /assets/css/font-awesome.css
+2018/05/13 21:10:09  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/img/bg.jpg
+2018/05/13 21:10:09  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/img/search-white.png
+2018/05/13 21:10:09  INFO [   worker@threadㄧ5 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/css/style.css
+2018/05/13 21:10:10  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/src/jquery.velocity.min.js
+2018/05/13 21:10:10  WARN [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 404         GET    /assets/fonts/open-sans-normal.woff
+2018/05/13 21:10:10  INFO [   worker@threadㄧ5 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /assets/font/dripicons.ttf
+2018/05/13 21:10:10  INFO [   worker@threadㄧ7 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /assets/font/entypo.woff
+2018/05/13 21:10:10  INFO [   worker@threadㄧ4 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/font/weathericons-regular-webfont.woff
+2018/05/13 21:10:10  WARN [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 404         GET    /assets/fonts/open-sans-bold.woff
+2018/05/13 21:10:10  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/fonts/fontawesome-webfont.woff
+2018/05/13 21:10:10  INFO [   worker@threadㄧ5 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/font/maki.woff
+2018/05/13 21:10:10  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /assets/fonts/open-sans-light.woff
+2018/05/13 21:10:10  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/number-pb.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/progress-bar/progress-app.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/preloader.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/bootstrap.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/app.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/load.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/main.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/jquery.flot.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/jquery.flot.resize.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/chart/realTime.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/speed/canvasgauge-coustom.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/countdown/jquery.countdown.js
+2018/05/13 21:10:11  WARN [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 404         GET    /req/assets/js/jhere-custom.js
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.jdk.version    => 1.8.0_151
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.dir       => F:\Java\javaworks\attendance
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.java.io.tmpdir => C:\Users\g\AppData\Local\Temp\
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.timezone  => Asia/Shanghai
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.file.encoding  => UTF-8
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.classpath      => F:/Java/javaworks/attendance/target/classes/
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /auth/login
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /index
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /syllabus
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route POST   /req/isRightUser
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /manager
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /user/user
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Register bean: [com.blade.Environment@22694b5d, com.bladejava.Controller.RequestController@15f489a6, com.bladejava.config.Dbconfig@2c26033c, com.bladejava.Controller.LoginController@477410e8, com.bladejava.service.LoginService@2faf88f8, com.bladejava.Controller.ManagerController@1ea79d12, com.bladejava.Dao.LoginDao@2044219, com.bladejava.config.Dbconfig@2c26033c, com.bladejava.Controller.SyllabusController@6510f1e1, com.bladejava.Controller.UserController@362b5df3]
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]                  c.b.c.Dbconfig : database init success
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Watched environment: true
+2018/05/13 21:10:56  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Use NioEventLoopGroup
+2018/05/13 21:10:57  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade initialize successfully, Time elapsed: 1278 ms
+2018/05/13 21:10:57  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade start with 0.0.0.0:9000
+2018/05/13 21:10:57  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Open browser access http://127.0.0.1:9000 ⚡
+
+2018/05/13 21:11:09  INFO [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 200   19ms  GET    /
+2018/05/13 21:11:09  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200   42ms  GET    /static/css/style.css
+2018/05/13 21:11:09  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /static/img/slide1.jpg
+2018/05/13 21:11:09  INFO [   worker@threadㄧ3 ]       c.b.s.n.StaticFileHandler : 200    5ms  GET    /static/img/slide2.jpg
+2018/05/13 21:11:18 DEBUG [   worker@threadㄧ1 ]                       o.s.Query : Executing query:
+SELECT COUNT(*) FROM students LIMIT 1
+2018/05/13 21:11:18 DEBUG [   worker@threadㄧ1 ]                       o.s.Query : total: 32 ms, execution: 19 ms, reading and parsing: 13 ms; executed [null]
+2018/05/13 21:11:18 ERROR [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 500         POST   /req/isRightUser
+2018/05/13 21:11:18 ERROR [   worker@threadㄧ1 ] c.b.m.h.DefaultExceptionHandler : Handle exception =>  org.sql2o.Sql2oException: Failed to add parameter with name 'p1'. No parameter with that name is declared in the sql.
+	at org.sql2o.Query.addParameterInternal(Query.java:138)
+	at org.sql2o.Query.addParameter(Query.java:259)
+	at org.sql2o.Query.addParameter(Query.java:165)
+	at org.sql2o.Query.addParameter(Query.java:203)
+	at org.sql2o.Query.withParams(Query.java:194)
+	at io.github.biezhi.anima.core.AnimaQuery.queryOne(AnimaQuery.java:1010)
+	at io.github.biezhi.anima.core.ResultList.one(ResultList.java:46)
+	at com.bladejava.service.LoginService.validate(LoginService.java:23)
+	at com.bladejava.Controller.RequestController.isRightUser(RequestController.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.blade.kit.ReflectKit.invokeMethod(ReflectKit.java:112)
+	at com.blade.mvc.handler.RequestExecution.handle(RequestExecution.java:185)
+	at com.blade.mvc.handler.RequestExecution.routeHandle(RequestExecution.java:156)
+	at com.blade.mvc.handler.RequestExecution.run(RequestExecution.java:115)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:26)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:18)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.handler.codec.http.HttpServerExpectContinueHandler.channelRead(HttpServerExpectContinueHandler.java:95)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:284)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1414)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:945)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:146)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.jdk.version    => 1.8.0_151
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.dir       => F:\Java\javaworks\attendance
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.java.io.tmpdir => C:\Users\g\AppData\Local\Temp\
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.timezone  => Asia/Shanghai
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.file.encoding  => UTF-8
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.classpath      => F:/Java/javaworks/attendance/target/classes/
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /auth/login
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /index
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /syllabus
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /manager
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route POST   /req/isRightUser
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /user/user
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Register bean: [com.blade.Environment@44adfaeb, com.bladejava.config.Dbconfig@5b067f5a, com.bladejava.Controller.RequestController@73616a4b, com.bladejava.Controller.LoginController@5fe39676, com.bladejava.service.LoginService@743245c3, com.bladejava.Controller.ManagerController@1c2608b0, com.bladejava.Dao.LoginDao@64ed0a4d, com.bladejava.config.Dbconfig@5b067f5a, com.bladejava.Controller.SyllabusController@27fe6080, com.bladejava.Controller.UserController@418435e1]
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]                  c.b.c.Dbconfig : database init success
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Watched environment: true
+2018/05/13 21:15:16  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Use NioEventLoopGroup
+2018/05/13 21:15:17  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade initialize successfully, Time elapsed: 1473 ms
+2018/05/13 21:15:17  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade start with 0.0.0.0:9000
+2018/05/13 21:15:17  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Open browser access http://127.0.0.1:9000 ⚡
+
+2018/05/13 21:15:20  INFO [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 200   21ms  GET    /
+2018/05/13 21:15:20  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200   43ms  GET    /static/css/style.css
+2018/05/13 21:15:20  INFO [   worker@threadㄧ3 ]       c.b.s.n.StaticFileHandler : 200    5ms  GET    /static/img/slide2.jpg
+2018/05/13 21:15:20  INFO [   worker@threadㄧ4 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /static/img/slide1.jpg
+2018/05/13 21:15:27 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : Executing query:
+SELECT COUNT(*) FROM students LIMIT 1
+2018/05/13 21:15:27 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : total: 34 ms, execution: 20 ms, reading and parsing: 14 ms; executed [null]
+2018/05/13 21:15:27 ERROR [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 500         POST   /req/isRightUser
+2018/05/13 21:15:27 ERROR [   worker@threadㄧ2 ] c.b.m.h.DefaultExceptionHandler : Handle exception =>  org.sql2o.Sql2oException: Failed to add parameter with name 'p1'. No parameter with that name is declared in the sql.
+	at org.sql2o.Query.addParameterInternal(Query.java:138)
+	at org.sql2o.Query.addParameter(Query.java:259)
+	at org.sql2o.Query.addParameter(Query.java:165)
+	at org.sql2o.Query.addParameter(Query.java:203)
+	at org.sql2o.Query.withParams(Query.java:194)
+	at io.github.biezhi.anima.core.AnimaQuery.queryList(AnimaQuery.java:1048)
+	at io.github.biezhi.anima.core.AnimaQuery.queryList(AnimaQuery.java:1067)
+	at io.github.biezhi.anima.core.AnimaQuery.queryOne(AnimaQuery.java:1032)
+	at io.github.biezhi.anima.core.AnimaQuery.one(AnimaQuery.java:782)
+	at com.bladejava.service.LoginService.validate(LoginService.java:21)
+	at com.bladejava.Controller.RequestController.isRightUser(RequestController.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.blade.kit.ReflectKit.invokeMethod(ReflectKit.java:112)
+	at com.blade.mvc.handler.RequestExecution.handle(RequestExecution.java:185)
+	at com.blade.mvc.handler.RequestExecution.routeHandle(RequestExecution.java:156)
+	at com.blade.mvc.handler.RequestExecution.run(RequestExecution.java:115)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:26)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:18)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.handler.codec.http.HttpServerExpectContinueHandler.channelRead(HttpServerExpectContinueHandler.java:95)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:284)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1414)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:945)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:146)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.jdk.version    => 1.8.0_151
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.dir       => F:\Java\javaworks\attendance
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.java.io.tmpdir => C:\Users\g\AppData\Local\Temp\
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.timezone  => Asia/Shanghai
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.file.encoding  => UTF-8
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.classpath      => F:/Java/javaworks/attendance/target/classes/
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /auth/login
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /index
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /syllabus
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /manager
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route POST   /req/isRightUser
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /user/user
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Register bean: [com.blade.Environment@13f7b5ca, com.bladejava.Controller.RequestController@101c765f, com.bladejava.config.Dbconfig@3ee6053b, com.bladejava.Controller.LoginController@50c9a646, com.bladejava.service.LoginService@7e3e1070, com.bladejava.Controller.ManagerController@d632f66, com.bladejava.Dao.LoginDao@3a23c2c, com.bladejava.config.Dbconfig@3ee6053b, com.bladejava.Controller.SyllabusController@1e445188, com.bladejava.Controller.UserController@10f77fa0]
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]                  c.b.c.Dbconfig : database init success
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Watched environment: true
+2018/05/13 22:10:45  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Use NioEventLoopGroup
+2018/05/13 22:10:46  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade initialize successfully, Time elapsed: 1558 ms
+2018/05/13 22:10:46  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade start with 0.0.0.0:9000
+2018/05/13 22:10:46  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Open browser access http://127.0.0.1:9000 ⚡
+
+2018/05/13 22:10:48  INFO [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 200   28ms  GET    /
+2018/05/13 22:10:48  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200   41ms  GET    /static/css/style.css
+2018/05/13 22:10:48  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /static/img/slide1.jpg
+2018/05/13 22:10:48  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    6ms  GET    /static/img/slide2.jpg
+2018/05/13 22:10:55 ERROR [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 500         POST   /req/isRightUser
+2018/05/13 22:10:55 ERROR [   worker@threadㄧ2 ] c.b.m.h.DefaultExceptionHandler : Handle exception =>  java.lang.NullPointerException
+	at com.bladejava.Controller.RequestController.isRightUser(RequestController.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.blade.kit.ReflectKit.invokeMethod(ReflectKit.java:112)
+	at com.blade.mvc.handler.RequestExecution.handle(RequestExecution.java:185)
+	at com.blade.mvc.handler.RequestExecution.routeHandle(RequestExecution.java:156)
+	at com.blade.mvc.handler.RequestExecution.run(RequestExecution.java:115)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:26)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:18)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.handler.codec.http.HttpServerExpectContinueHandler.channelRead(HttpServerExpectContinueHandler.java:95)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:284)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1414)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:945)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:146)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018/05/13 22:13:01  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.jdk.version    => 1.8.0_151
+2018/05/13 22:13:01  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.dir       => F:\Java\javaworks\attendance
+2018/05/13 22:13:01  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.java.io.tmpdir => C:\Users\g\AppData\Local\Temp\
+2018/05/13 22:13:01  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.timezone  => Asia/Shanghai
+2018/05/13 22:13:01  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.file.encoding  => UTF-8
+2018/05/13 22:13:01  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.classpath      => F:/Java/javaworks/attendance/target/classes/
+2018/05/13 22:13:02  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /auth/login
+2018/05/13 22:13:02  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /
+2018/05/13 22:13:02  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /index
+2018/05/13 22:13:02  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /syllabus
+2018/05/13 22:13:02  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /manager
+2018/05/13 22:13:02  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route POST   /req/isRightUser
+2018/05/13 22:13:02  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /user/user
+2018/05/13 22:13:02  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Register bean: [com.blade.Environment@44adfaeb, com.bladejava.config.Dbconfig@5b067f5a, com.bladejava.Controller.RequestController@73616a4b, com.bladejava.Controller.LoginController@5fe39676, com.bladejava.service.LoginService@743245c3, com.bladejava.Controller.ManagerController@1c2608b0, com.bladejava.Dao.LoginDao@64ed0a4d, com.bladejava.config.Dbconfig@5b067f5a, com.bladejava.Controller.SyllabusController@27fe6080, com.bladejava.Controller.UserController@418435e1]
+2018/05/13 22:13:02  INFO [          _(:3」∠)_ ]                  c.b.c.Dbconfig : database init success
+2018/05/13 22:13:02  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Watched environment: true
+2018/05/13 22:13:02  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Use NioEventLoopGroup
+2018/05/13 22:13:03  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade initialize successfully, Time elapsed: 1402 ms
+2018/05/13 22:13:03  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade start with 0.0.0.0:9000
+2018/05/13 22:13:03  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Open browser access http://127.0.0.1:9000 ⚡
+
+2018/05/13 22:13:05  INFO [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 200   20ms  GET    /
+2018/05/13 22:13:05  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200   38ms  GET    /static/css/style.css
+2018/05/13 22:13:05  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /static/img/slide2.jpg
+2018/05/13 22:13:05  INFO [   worker@threadㄧ3 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /static/img/slide1.jpg
+2018/05/13 22:13:15 ERROR [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 500         POST   /req/isRightUser
+2018/05/13 22:13:15 ERROR [   worker@threadㄧ2 ] c.b.m.h.DefaultExceptionHandler : Handle exception =>  java.lang.NullPointerException
+	at com.bladejava.Controller.RequestController.isRightUser(RequestController.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.blade.kit.ReflectKit.invokeMethod(ReflectKit.java:112)
+	at com.blade.mvc.handler.RequestExecution.handle(RequestExecution.java:185)
+	at com.blade.mvc.handler.RequestExecution.routeHandle(RequestExecution.java:156)
+	at com.blade.mvc.handler.RequestExecution.run(RequestExecution.java:115)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:26)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:18)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.handler.codec.http.HttpServerExpectContinueHandler.channelRead(HttpServerExpectContinueHandler.java:95)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:284)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1414)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:945)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:146)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018/05/13 22:14:38  INFO [   worker@threadㄧ4 ]        c.b.m.h.RequestExecution : 200    8ms  GET    /auth/login
+2018/05/13 22:14:38  INFO [   worker@threadㄧ4 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /static/css/style.css
+2018/05/13 22:14:38  INFO [   worker@threadㄧ7 ]       c.b.s.n.StaticFileHandler : 200    2ms  GET    /static/img/slide2.jpg
+2018/05/13 22:14:38  INFO [   worker@threadㄧ6 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /static/img/slide1.jpg
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.jdk.version    => 1.8.0_151
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.dir       => F:\Java\javaworks\attendance
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.java.io.tmpdir => C:\Users\g\AppData\Local\Temp\
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.timezone  => Asia/Shanghai
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.file.encoding  => UTF-8
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.classpath      => F:/Java/javaworks/attendance/target/classes/
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /auth/login
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /index
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /syllabus
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /manager
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route POST   /req/isRightUser
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /user/user
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Register bean: [com.blade.Environment@44adfaeb, com.bladejava.config.Dbconfig@5b067f5a, com.bladejava.Controller.RequestController@73616a4b, com.bladejava.Controller.LoginController@5fe39676, com.bladejava.service.LoginService@743245c3, com.bladejava.Controller.ManagerController@1c2608b0, com.bladejava.Dao.LoginDao@64ed0a4d, com.bladejava.config.Dbconfig@5b067f5a, com.bladejava.Controller.SyllabusController@27fe6080, com.bladejava.Controller.UserController@418435e1]
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]                  c.b.c.Dbconfig : database init success
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Watched environment: true
+2018/05/13 22:20:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Use NioEventLoopGroup
+2018/05/13 22:20:09  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade initialize successfully, Time elapsed: 1400 ms
+2018/05/13 22:20:09  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade start with 0.0.0.0:9000
+2018/05/13 22:20:09  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Open browser access http://127.0.0.1:9000 ⚡
+
+2018/05/13 22:20:16  INFO [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 200   20ms  GET    /
+2018/05/13 22:20:16  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200   31ms  GET    /static/css/style.css
+2018/05/13 22:20:16  INFO [   worker@threadㄧ4 ]       c.b.s.n.StaticFileHandler : 200    3ms  GET    /static/img/slide1.jpg
+2018/05/13 22:20:16  INFO [   worker@threadㄧ3 ]       c.b.s.n.StaticFileHandler : 200    4ms  GET    /static/img/slide2.jpg
+2018/05/13 22:20:23 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : Executing query:
+SELECT COUNT(*) FROM students LIMIT 1
+2018/05/13 22:20:23 DEBUG [   worker@threadㄧ2 ]                       o.s.Query : total: 36 ms, execution: 21 ms, reading and parsing: 15 ms; executed [null]
+2018/05/13 22:20:23 ERROR [   worker@threadㄧ2 ]        c.b.m.h.RequestExecution : 500         POST   /req/isRightUser
+2018/05/13 22:20:23 ERROR [   worker@threadㄧ2 ] c.b.m.h.DefaultExceptionHandler : Handle exception =>  org.sql2o.Sql2oException: Failed to add parameter with name 'p1'. No parameter with that name is declared in the sql.
+	at org.sql2o.Query.addParameterInternal(Query.java:138)
+	at org.sql2o.Query.addParameter(Query.java:229)
+	at org.sql2o.Query.addParameter(Query.java:161)
+	at org.sql2o.Query.addParameter(Query.java:203)
+	at org.sql2o.Query.withParams(Query.java:194)
+	at io.github.biezhi.anima.core.AnimaQuery.queryList(AnimaQuery.java:1048)
+	at io.github.biezhi.anima.core.AnimaQuery.queryList(AnimaQuery.java:1067)
+	at io.github.biezhi.anima.core.AnimaQuery.all(AnimaQuery.java:797)
+	at io.github.biezhi.anima.core.AnimaQuery.byIds(AnimaQuery.java:771)
+	at com.bladejava.service.LoginService.validate(LoginService.java:25)
+	at com.bladejava.Controller.RequestController.isRightUser(RequestController.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.blade.kit.ReflectKit.invokeMethod(ReflectKit.java:112)
+	at com.blade.mvc.handler.RequestExecution.handle(RequestExecution.java:185)
+	at com.blade.mvc.handler.RequestExecution.routeHandle(RequestExecution.java:156)
+	at com.blade.mvc.handler.RequestExecution.run(RequestExecution.java:115)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:26)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:18)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.handler.codec.http.HttpServerExpectContinueHandler.channelRead(HttpServerExpectContinueHandler.java:95)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:284)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1414)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:945)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:146)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.jdk.version    => 1.8.0_151
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.dir       => F:\Java\javaworks\attendance
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.java.io.tmpdir => C:\Users\g\AppData\Local\Temp\
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.timezone  => Asia/Shanghai
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.file.encoding  => UTF-8
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.classpath      => F:/Java/javaworks/attendance/target/classes/
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /auth/login
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /index
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /syllabus
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /manager
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route POST   /req/isRightUser
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /user/user
+2018/05/14 12:14:47  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Register bean: [com.blade.Environment@164b61c3, com.bladejava.config.Dbconfig@2a8df5a, com.bladejava.Controller.RequestController@876d31a, com.bladejava.Controller.LoginController@338181a7, com.bladejava.service.LoginService@7e09ab6d, com.bladejava.Controller.ManagerController@3a1ff9f9, com.bladejava.Dao.LoginDao@4cf13a3, com.bladejava.config.Dbconfig@2a8df5a, com.bladejava.Controller.SyllabusController@3bfc2624, com.bladejava.Controller.UserController@89da0f5]
+2018/05/14 12:14:48  INFO [          _(:3」∠)_ ]                  c.b.c.Dbconfig : database init success
+2018/05/14 12:14:48  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Watched environment: true
+2018/05/14 12:14:48  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Use NioEventLoopGroup
+2018/05/14 12:14:49  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade initialize successfully, Time elapsed: 1711 ms
+2018/05/14 12:14:49  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade start with 0.0.0.0:9000
+2018/05/14 12:14:49  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Open browser access http://127.0.0.1:9000 ⚡
+
+2018/05/14 12:14:55  INFO [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 200   24ms  GET    /
+2018/05/14 12:14:56  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200   38ms  GET    /static/css/style.css
+2018/05/14 12:14:56  INFO [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 200    5ms  GET    /static/img/slide1.jpg
+2018/05/14 12:14:56  INFO [   worker@threadㄧ3 ]       c.b.s.n.StaticFileHandler : 200   35ms  GET    /static/img/slide2.jpg
+2018/05/14 12:14:56  WARN [   worker@threadㄧ3 ]       c.b.s.n.StaticFileHandler : 404         GET    /favicon.ico
+2018/05/14 12:14:56  WARN [   worker@threadㄧ2 ]       c.b.s.n.StaticFileHandler : 404         GET    /favicon.ico
+2018/05/14 12:14:56 ERROR [   worker@threadㄧ2 ] c.b.m.h.DefaultExceptionHandler : Handle exception =>  java.io.IOException: An established connection was aborted by the software in your host machine
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1108)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:345)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.jdk.version    => 1.8.0_151
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.dir       => F:\Java\javaworks\attendance
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.java.io.tmpdir => C:\Users\g\AppData\Local\Temp\
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.user.timezone  => Asia/Shanghai
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.file.encoding  => UTF-8
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : environment.classpath      => F:/Java/javaworks/attendance/target/classes/
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /auth/login
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /index
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /syllabus
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /manager
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route POST   /req/isRightUser
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]            c.b.m.r.RouteMatcher : Add route GET    /user/user
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Register bean: [com.blade.Environment@1e8688f4, com.bladejava.Controller.LoginController@47cad3f0, com.bladejava.Controller.RequestController@3eca5aa1, com.bladejava.config.Dbconfig@7046d713, com.bladejava.service.LoginService@5a2d30c7, com.bladejava.Controller.ManagerController@4be92d21, com.bladejava.Dao.LoginDao@271a69af, com.bladejava.config.Dbconfig@7046d713, com.bladejava.Controller.SyllabusController@61a2cc10, com.bladejava.Controller.UserController@52ba73eb]
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]                  c.b.c.Dbconfig : database init success
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Watched environment: true
+2018/05/14 12:15:08  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Use NioEventLoopGroup
+2018/05/14 12:15:09  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade initialize successfully, Time elapsed: 1334 ms
+2018/05/14 12:15:09  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Blade start with 0.0.0.0:9000
+2018/05/14 12:15:09  INFO [          _(:3」∠)_ ]             c.b.s.n.NettyServer : Open browser access http://127.0.0.1:9000 ⚡
+
+2018/05/14 12:15:15  INFO [   worker@threadㄧ1 ]        c.b.m.h.RequestExecution : 200   22ms  GET    /
+2018/05/14 12:15:15  INFO [   worker@threadㄧ1 ]       c.b.s.n.StaticFileHandler : 200   22ms  GET    /static/css/style.css
+2018/05/14 12:15:16  WARN [   worker@threadㄧ3 ]       c.b.s.n.StaticFileHandler : 404         GET    /favicon.ico
+2018/05/14 12:15:25 DEBUG [   worker@threadㄧ3 ]                       o.s.Query : Executing query:
+SELECT COUNT(*) FROM students LIMIT 1
+2018/05/14 12:15:25 DEBUG [   worker@threadㄧ3 ]                       o.s.Query : total: 40 ms, execution: 25 ms, reading and parsing: 15 ms; executed [null]
+2018/05/14 12:15:25 ERROR [   worker@threadㄧ3 ]        c.b.m.h.RequestExecution : 500         POST   /req/isRightUser
+2018/05/14 12:15:25 ERROR [   worker@threadㄧ3 ] c.b.m.h.DefaultExceptionHandler : Handle exception =>  org.sql2o.Sql2oException: Failed to add parameter with name 'p1'. No parameter with that name is declared in the sql.
+	at org.sql2o.Query.addParameterInternal(Query.java:138)
+	at org.sql2o.Query.addParameter(Query.java:229)
+	at org.sql2o.Query.addParameter(Query.java:161)
+	at org.sql2o.Query.addParameter(Query.java:203)
+	at org.sql2o.Query.withParams(Query.java:194)
+	at io.github.biezhi.anima.core.AnimaQuery.queryList(AnimaQuery.java:1048)
+	at io.github.biezhi.anima.core.AnimaQuery.queryList(AnimaQuery.java:1067)
+	at io.github.biezhi.anima.core.AnimaQuery.all(AnimaQuery.java:797)
+	at io.github.biezhi.anima.core.AnimaQuery.byIds(AnimaQuery.java:771)
+	at com.bladejava.service.LoginService.validate(LoginService.java:25)
+	at com.bladejava.Controller.RequestController.isRightUser(RequestController.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.blade.kit.ReflectKit.invokeMethod(ReflectKit.java:112)
+	at com.blade.mvc.handler.RequestExecution.handle(RequestExecution.java:185)
+	at com.blade.mvc.handler.RequestExecution.routeHandle(RequestExecution.java:156)
+	at com.blade.mvc.handler.RequestExecution.run(RequestExecution.java:115)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:26)
+	at com.blade.server.netty.HttpServerHandler.channelRead0(HttpServerHandler.java:18)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+	at io.netty.handler.codec.http.HttpServerExpectContinueHandler.channelRead(HttpServerExpectContinueHandler.java:95)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:438)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:310)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:284)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:253)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1414)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:945)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:146)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:886)
+	at java.lang.Thread.run(Thread.java:748)
+
